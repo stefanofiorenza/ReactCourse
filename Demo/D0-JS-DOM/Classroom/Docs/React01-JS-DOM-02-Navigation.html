@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React01-JS-DOM-02-Navigation</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__left">
+    <div class="stackedit__toc">
+      
+<ul>
+<li><a href="#js-dom-navigation">JS DOM Navigation</a>
+<ul>
+<li><a href="#goals">GOALS</a></li>
+<li><a href="#steps">STEPS</a></li>
+<li><a href="#step-1--explore-html-structure-and-identify-sections">Step 1 : Explore html structure and identify sections</a></li>
+<li><a href="#step-2--create-a-template-function">Step 2:  Create a template function</a></li>
+<li><a href="#step-3--create-a-link-to-a-routing-function">Step 3:  Create a link to a routing function</a></li>
+<li><a href="#step-4--connect-template-and-index.html-content-node">Step 4:  Connect template and index.html content node</a></li>
+<li><a href="#step-5-try-it-yourself">Step 5: Try it yourself</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+  <div class="stackedit__right">
+    <div class="stackedit__html">
+      <h1 id="js-dom-navigation">JS DOM Navigation</h1>
+<h2 id="goals">GOALS</h2>
+<p>From UI template with many HTML pages connected with links, to a single page application with:</p>
+<ul>
+<li>UI Layouts elements (navigation bar, side menu, contents, footer)</li>
+<li>UI pages loaded by JS code</li>
+</ul>
+<h2 id="steps">STEPS</h2>
+<ul>
+<li>Step 1: Explore html structure and identify sections</li>
+<li>Step 2:  Create a template function</li>
+<li>Step 3:  Create a link to a routing function</li>
+<li>Step 4:  Connect template and content node</li>
+<li>Step 5: Try it yourself</li>
+</ul>
+<h2 id="step-1--explore-html-structure-and-identify-sections">Step 1 : Explore html structure and identify sections</h2>
+<p><strong>Identify layout sections:</strong><br>
+Navigation bar<br>
+Side menu<br>
+content viewport</p>
+<h3 id="labindex.html">/lab/index.html</h3>
+<pre class=" language-html"><code class="prism  language-html">
+...
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>navbar navbar-expand-lg navbar-absolute navbar-transparent<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+...
+
+..
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sidebar<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+ ..
+
+...
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>contentDiv<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>       
+ ...
+
+</code></pre>
+<h2 id="step-2--create-a-template-function">Step 2:  Create a template function</h2>
+<h3 id="labtemplatescreateemployee.js">/lab/templates/CreateEmployee.js</h3>
+<p>See fragment from  /demo/html/CreateEmployee.html (from &lt;div class=“content” )</p>
+<p>Create a function that returns an html fragment from a js string template</p>
+<pre class=" language-javascript"><code class="prism  language-javascript">
+<span class="token keyword">function</span> <span class="token function">createEmployeePage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token keyword">return</span>  <span class="token template-string"><span class="token string">`&lt;div class="row"&gt;
+				&lt;div class="col-md-8"&gt;
+				&lt;div class="card"&gt;
+				&lt;div class="card-header"&gt;
+				&lt;h4 class="title"&gt;Create New Employee&lt;/h4&gt;
+			&lt;/div&gt;
+			...
+	`</span></span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="step-3--create-a-link-to-a-routing-function">Step 3:  Create a link to a routing function</h2>
+<h3 id="labrouter.js">/lab/router.js</h3>
+<p>Function that should</p>
+<ol>
+<li>Identifies which element to modify (DOM selector)</li>
+<li>Change the innerHTML with the string created in the template file</li>
+</ol>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span> <span class="token function">routeToCreateEmployee</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	
+	<span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'routeToCreateEmployee '</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+    <span class="token comment">//1) identify content node with selector</span>
+    <span class="token comment">//2) Update .content node with template contents</span>
+  
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="labindex.html-1">/lab/index.html</h3>
+<ol>
+<li>All the above javascript dependencies should be in the html</li>
+<li>Modify link to point to router</li>
+</ol>
+<pre class=" language-html"><code class="prism  language-html">
+..
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>templates/CreateEmployee.js<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>router.js<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+..
+
+
+.. later on ...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>javascript:void(0)<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>routeToCreateEmployee()<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tim-icons icon-single-02<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Create Employee<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+..
+
+</code></pre>
+<h2 id="step-4--connect-template-and-index.html-content-node">Step 4:  Connect template and index.html content node</h2>
+<h3 id="labrouter.js-1">/lab/router.js</h3>
+<p>Implement router function</p>
+<ol>
+<li>Identifies which element to modify (DOM selector)</li>
+<li>Change the innerHTML with the string created in the template file</li>
+</ol>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span> <span class="token function">routeToCreateEmployee</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		
+    <span class="token comment">//1) identify content node with selector</span>
+    <span class="token keyword">let</span> mainDiv <span class="token operator">=</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"contentDiv"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//2) Update .content node with template contents</span>
+    mainDiv<span class="token punctuation">.</span>innerHTML<span class="token operator">=</span><span class="token function">createEmployeePage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="step-5-try-it-yourself">Step 5: Try it yourself</h2>
+<p>Try to follow similar design to connect</p>
+<ul>
+<li>EditEmployee</li>
+<li>SearchEmployees</li>
+</ul>
+<p>See example of pages in  /demo/html/</p>
+
+    </div>
+  </div>
+</body>
+
+</html>

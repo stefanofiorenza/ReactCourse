@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React01-JS-DOM-01-Intro</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__left">
+    <div class="stackedit__toc">
+      
+<ul>
+<li><a href="#js-dom">JS DOM</a>
+<ul>
+<li><a href="#goals">GOALS</a></li>
+<li><a href="#steps">STEPS</a></li>
+<li><a href="#step-1--download-ui-template">Step 1 : Download UI Template</a></li>
+<li><a href="#step-2--dom-with-browser-debugger">Step 2 : DOM with Browser debugger</a></li>
+<li><a href="#step-3--how-to-navigate-dom-from-code">Step 3 : how to navigate DOM from code</a></li>
+<li><a href="#step-4--how-to-manipulate-dom-from-code">Step 4 : how to manipulate DOM from code</a></li>
+<li><a href="#step-5-introduction-to-js-objects">Step 5: Introduction to Js Objects:</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+  <div class="stackedit__right">
+    <div class="stackedit__html">
+      <h1 id="js-dom">JS DOM</h1>
+<h2 id="goals">GOALS</h2>
+<ul>
+<li>Introduction to browser DOM</li>
+<li>JS intro to Objects</li>
+</ul>
+<h2 id="steps">STEPS</h2>
+<ul>
+<li>Step 1: Download UI template</li>
+<li>Step 2: how to navigate DOM with Browser debugger</li>
+<li>Step 3: how to navigate DOM from code</li>
+<li>Step 4: how to manipulate DOM from code</li>
+<li>Step 5: Introduction to Js Objects</li>
+</ul>
+<h2 id="step-1--download-ui-template">Step 1 : Download UI Template</h2>
+<h2 id="step-2--dom-with-browser-debugger">Step 2 : DOM with Browser debugger</h2>
+<ul>
+<li>
+<p>Open with Chrome:<br>
+/demo/original/dashboard.html</p>
+</li>
+<li>
+<p>Open Js Debugger with<br>
+CTRL+SHIFT+I</p>
+</li>
+</ul>
+<pre class=" language-javascript"><code class="prism  language-javascript">Try followings <span class="token keyword">in</span> console<span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token comment">// from document selector api docs (see below)</span>
+document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"intro"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//css selectors</span>
+document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'#'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>node <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>node<span class="token punctuation">.</span>style<span class="token punctuation">.</span>background<span class="token operator">=</span><span class="token string">'yellow'</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'li'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>node <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>node<span class="token punctuation">.</span>style<span class="token punctuation">.</span>background<span class="token operator">=</span><span class="token string">'yellow'</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'.tim-icons'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>node <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>node<span class="token punctuation">.</span>style<span class="token punctuation">.</span>background<span class="token operator">=</span><span class="token string">'yellow'</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'li:nth-child(2)'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>node <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>node<span class="token punctuation">.</span>style<span class="token punctuation">.</span>background<span class="token operator">=</span><span class="token string">'yellow'</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'li:last-child'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>node <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>node<span class="token punctuation">.</span>style<span class="token punctuation">.</span>background<span class="token operator">=</span><span class="token string">'yellow'</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'li:nth-child(odd)'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>node <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>node<span class="token punctuation">.</span>style<span class="token punctuation">.</span>background<span class="token operator">=</span><span class="token string">'yellow'</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<p>See more here about document selector api:<br>
+<a href="https://www.w3schools.com/js/js_htmldom_elements.asp">https://www.w3schools.com/js/js_htmldom_elements.asp</a></p>
+<p>See more here about css selector api:<br>
+<a href="https://www.w3schools.com/cssref/css_selectors.asp">https://www.w3schools.com/cssref/css_selectors.asp</a></p>
+<hr>
+<h2 id="step-3--how-to-navigate-dom-from-code">Step 3 : how to navigate DOM from code</h2>
+<h3 id="demobasicsdemo01dom.js">/demo/basics/Demo01DOM.js</h3>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token comment">//1) Navigate DOM and get nodes..</span>
+<span class="token keyword">function</span> <span class="token function">highlightSelected</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'highlightSelected'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">let</span> node <span class="token operator">=</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">highlightSingleNode</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//let resultNodeSet =document.getElementsByName("");</span>
+    <span class="token comment">// let resultNodeSet =document.getElementsByTagName("");</span>
+    <span class="token comment">// let resultNodeSet =document.getElementsByClassName("");</span>
+    <span class="token comment">//highlightNodeSet(resultNodeSet);</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">highlightSingleNode</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">{</span>   
+    <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        node<span class="token punctuation">.</span>style<span class="token punctuation">.</span>backgroundColor <span class="token operator">=</span> <span class="token string">"yellow"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>   
+<span class="token punctuation">}</span>  
+
+
+<span class="token keyword">function</span> <span class="token function">highlightNodeSet</span><span class="token punctuation">(</span>resultNodeSet<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>node <span class="token keyword">of</span> resultNodeSet<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        node<span class="token punctuation">.</span>style<span class="token punctuation">.</span>backgroundColor <span class="token operator">=</span> <span class="token string">"yellow"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
+<h3 id="demobasicstest01dom.html">/demo/basics/Test01Dom.html</h3>
+<p>connect function <strong>highlightSelected()</strong> to <em>click here</em> link in html page:</p>
+<pre class=" language-html"><code class="prism  language-html">..locate following snippet
+..
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>javascript:void(0)<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>simple-text logo-normal<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>highlightSelected()<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+   Click Here 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+...
+
+</code></pre>
+<h2 id="step-4--how-to-manipulate-dom-from-code">Step 4 : how to manipulate DOM from code</h2>
+<h3 id="demobasicsdemo01dom.js-1">/demo/basics/Demo01DOM.js</h3>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token comment">//2) Change DOM in memory</span>
+
+<span class="token keyword">function</span> <span class="token function">addNewNodes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">const</span> contentDivNode <span class="token operator">=</span>document<span class="token punctuation">.</span><span class="token function">getElementsByClassName</span><span class="token punctuation">(</span><span class="token string">'content'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//2.1) innerHTML property</span>
+    <span class="token comment">//contentDivNode.innerHTML=createNestedDivElementsAsHtmlString('test with inner html');</span>
+    
+    <span class="token comment">//2.2) Standard DOM api</span>
+    contentDivNode<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span><span class="token function">createNestedDivElements</span><span class="token punctuation">(</span><span class="token string">'test with inner html'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+
+ <span class="token comment">//2.1) innerHTML property</span>
+<span class="token keyword">function</span> <span class="token function">createNestedDivElementsAsHtmlString</span><span class="token punctuation">(</span>sometext<span class="token punctuation">)</span><span class="token punctuation">{</span>
+ 
+    <span class="token keyword">return</span> <span class="token template-string"><span class="token string">`
+      &lt;div id="myMainDiv" class="parent"&gt;
+        &lt;div class="internalDiv"&gt;
+              </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>sometext<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+        &lt;/div&gt; 
+      &lt;/div&gt;
+    `</span></span>
+  <span class="token punctuation">}</span>
+  
+
+<span class="token comment">//2.2) Standard DOM api</span>
+<span class="token keyword">function</span> <span class="token function">createNestedDivElementsWithDomApi</span><span class="token punctuation">(</span>sometext<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  
+    <span class="token keyword">let</span> mainDiv <span class="token operator">=</span>document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    mainDiv<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"parent"</span><span class="token punctuation">)</span>
+    mainDiv<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">,</span> <span class="token string">"myMainDiv"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+    <span class="token keyword">let</span> internalDiv <span class="token operator">=</span>document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    internalDiv<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"internalDiv"</span><span class="token punctuation">)</span>
+    internalDiv<span class="token punctuation">.</span>textContent<span class="token operator">=</span>sometext<span class="token punctuation">;</span>
+    
+    mainDiv<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>internalDiv<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> mainDiv<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+</code></pre>
+<h3 id="demobasicstest01dom.html-1">/demo/basics/Test01Dom.html</h3>
+<p>connect function <strong>addNewNodes()</strong> to <em>click here</em> link in html page:</p>
+<pre class=" language-html"><code class="prism  language-html">..locate following snippet
+..
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>javascript:void(0)<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>simple-text logo-normal<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>addNewNodes()<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+   Click Here 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+...
+</code></pre>
+<hr>
+<h2 id="step-5-introduction-to-js-objects">Step 5: Introduction to Js Objects:</h2>
+<h3 id="demobasicsdemo02objects.js">/demo/basics/Demo02Objects.js</h3>
+<ul>
+<li>Anonymous Object</li>
+</ul>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">var</span> employee <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    employee<span class="token punctuation">.</span>fullName<span class="token operator">=</span><span class="token string">"Stefano Fiorenza"</span><span class="token punctuation">;</span> <span class="token comment">// add property with obJvarname.propName</span>
+    employee<span class="token punctuation">[</span><span class="token string">'country'</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">"Italy"</span><span class="token punctuation">;</span> <span class="token comment">// add property with obJvarname['propName'] single quote</span>
+    employee<span class="token punctuation">[</span><span class="token string">"city"</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">"Napoli"</span><span class="token punctuation">;</span> <span class="token comment">// add property with obJvarname["propName"] also double quote</span>
+    employee<span class="token punctuation">.</span><span class="token function-variable function">getCountryAndCity</span><span class="token operator">=</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment">// an object property can be also a function</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>country<span class="token operator">+</span><span class="token string">"."</span><span class="token operator">+</span><span class="token keyword">this</span><span class="token punctuation">.</span>city<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>  
+</code></pre>
+<ul>
+<li>Object from function Prototype</li>
+</ul>
+<pre class=" language-javascript"><code class="prism  language-javascript"> <span class="token keyword">function</span> <span class="token function">Employee</span><span class="token punctuation">(</span>fullName<span class="token punctuation">,</span> country<span class="token punctuation">,</span> city <span class="token punctuation">,</span>salary<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>fullName<span class="token operator">=</span>fullName<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>country<span class="token operator">=</span>country<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>city<span class="token operator">=</span>city<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>salary<span class="token operator">=</span>salary<span class="token punctuation">;</span>   
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">getCountryAndCity</span><span class="token operator">=</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>country<span class="token operator">+</span><span class="token string">"."</span><span class="token operator">+</span><span class="token keyword">this</span><span class="token punctuation">.</span>city<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> 
+    <span class="token punctuation">}</span>
+    <span class="token keyword">var</span> employee <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Employee</span><span class="token punctuation">(</span><span class="token string">"Stefano Fiorenza"</span><span class="token punctuation">,</span><span class="token string">"Italy"</span><span class="token punctuation">,</span><span class="token string">"Napoli"</span><span class="token punctuation">,</span><span class="token number">2000.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<ul>
+<li>Object as Json literal</li>
+</ul>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">var</span> employee <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">"fullName"</span><span class="token punctuation">:</span><span class="token string">"Stefano Fiorenza"</span><span class="token punctuation">,</span>
+    <span class="token string">"country"</span><span class="token punctuation">:</span><span class="token string">"Italy"</span><span class="token punctuation">,</span>
+    <span class="token string">"city"</span><span class="token punctuation">:</span><span class="token string">"Napoli"</span><span class="token punctuation">,</span>
+    <span class="token string">"salary"</span><span class="token punctuation">:</span><span class="token number">2000.0</span>
+    getCountryAndCity<span class="token punctuation">:</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+         <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>country<span class="token operator">+</span><span class="token string">"."</span><span class="token operator">+</span><span class="token keyword">this</span><span class="token punctuation">.</span>city<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<ul>
+<li>Object from class (ES5)</li>
+</ul>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">class</span> <span class="token class-name">Employee</span> <span class="token punctuation">{</span>
+
+    <span class="token function">constructor</span><span class="token punctuation">(</span>fullName<span class="token punctuation">,</span> country<span class="token punctuation">,</span> city <span class="token punctuation">,</span>salary<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>fullName<span class="token operator">=</span>fullName<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>country<span class="token operator">=</span>country<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>city<span class="token operator">=</span>city<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>salary<span class="token operator">=</span>salary<span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span>
+
+    <span class="token function">getCountryAndCity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>country<span class="token operator">+</span><span class="token string">"."</span><span class="token operator">+</span><span class="token keyword">this</span><span class="token punctuation">.</span>city<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> employee <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Employee</span><span class="token punctuation">(</span><span class="token string">"Stefano Fiorenza"</span><span class="token punctuation">,</span><span class="token string">"Italy"</span><span class="token punctuation">,</span><span class="token string">"Napoli"</span><span class="token punctuation">,</span><span class="token number">2000.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="demobasicstest02oop.html">/demo/basics/Test02Oop.html</h3>
+<p>Connects with js demo file.<br>
+Test from browser console:</p>
+<pre class=" language-html"><code class="prism  language-html">..
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Demo02Objects.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+..
+</code></pre>
+
+    </div>
+  </div>
+</body>
+
+</html>
